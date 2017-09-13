@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9/]*)*.php$ index.php
+RewriteRule ^([a-zA-Z0-9/]*)*.html$ index.php
+RewriteRule ^([a-zA-Z0-9/]*)/([a-zA-Z0-9/]*)$ index.php?controller=$1&function=$2&%{QUERY_STRING}
+ErrorDocument 404 /core/404.php

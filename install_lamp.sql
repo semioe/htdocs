@@ -1,0 +1,1 @@
+CREATE TABLE `semioe`.`lamps` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `title` VARCHAR(200) NOT NULL , `status` VARCHAR(50) NOT NULL DEFAULT 'off' , `family_id` INT(11) NOT NULL DEFAULT '0' , PRIMARY KEY (`id`)) ENGINE = InnoDB;
