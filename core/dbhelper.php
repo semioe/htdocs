@@ -33,5 +33,18 @@ class DbHelper{
             return "[]";
         }
 	}
+	function exec($sql){
+        mysql_query($sql,$this->conn);
+    }
+    function get_array($sql){
+        $arr=array();
+        $result = mysql_query($sql,$this->conn);
+        if($result){
+            while($row = mysql_fetch_array($result)){
+                array_push($arr,$row);
+            }
+        }
+        return $arr;
+    }
 }
 ?>

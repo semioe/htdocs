@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>semioe 视频操作教程 app 下载</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            text-align: center;
+        }
+        .hide{
+            display: none;
+        }
+        .alert{
+            position:fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.9;
+            background: #000;
+            text-align: right;
+        }
+        .page{
+            margin-top: 20px;
+        }
+        h5{
+            margin-top: 20px;
+        }
+        #logo{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h2>semioe 视频操作教程 app 下载</h2>
+       
+        <img id="logo" src="/public/image/icon.png" style="width:30%" alt="">
+    </div>
+
+    <div id="ios" class="hide">
+        <h2>抱歉</h2>
+        <h5>暂时不支持IOS</h5>
+    </div>
+    
+    <div id="weixin_alert" class="alert">
+        <img src="/public/image/info.jpg" alt="" style="width:85%">
+    </div>
+    
+    <script>
+        var userAgent = navigator.userAgent;
+        
+        
+        var isMicroMessenger = userAgent.toLowerCase().match(/micromessenger/);
+        if(isMicroMessenger) {
+            //
+        }else{
+            document.getElementById("weixin_alert").className="hide";
+            var isIos = userAgent.toLowerCase().match(/iphone|ipod|ipad/);
+            if(isIos) {
+                //
+                document.getElementById("ios").className="page";
+                
+            }else{
+                //download
+                
+                window.location.href="/public/semioe.apk"
+            }
+        }
+
+    </script>
+</body>
+</html>
